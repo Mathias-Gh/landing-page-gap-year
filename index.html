@@ -309,6 +309,71 @@
             50% { transform: translateY(-8px); }
         }
 
+        /* App Preview Section */
+        .app-preview {
+            padding: 80px 0;
+            border-top: 1px solid var(--color-border);
+            position: relative;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px;
+        }
+
+        .preview-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .preview-info {
+            text-align: center;
+        }
+
+        .preview-info h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .preview-info p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        .preview-img-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            background-color: #0b0f19;
+            aspect-ratio: 9 / 15; /* Standard vertical screenshot ratio */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .preview-img-wrapper:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15);
+        }
+
+        .preview-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.4s ease;
+        }
+
+        .preview-img-wrapper:hover .preview-img {
+            transform: scale(1.03);
+        }
+
         /* Features Section */
         .features {
             padding: 80px 0 100px;
@@ -406,7 +471,7 @@
                 order: -1; /* Place image on top on mobile */
             }
 
-            .features-grid {
+            .features-grid, .preview-grid {
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
@@ -461,6 +526,52 @@
                                 <h4>100% Vérifié</h4>
                                 <p>Organismes audités</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Preview Section -->
+        <section class="app-preview">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Découvrir l'application</span>
+                    <h2>Une expérience guidée et intuitive</h2>
+                    <p class="section-desc">Découvrez comment notre application vous aide à trouver la césure de vos rêves en quelques instants.</p>
+                </div>
+
+                <div class="preview-grid">
+                    <!-- Step 1 -->
+                    <div class="preview-card">
+                        <div class="preview-img-wrapper">
+                            <img src="assets/screenshot-1.png" alt="Capture d'écran du questionnaire de césure" class="preview-img">
+                        </div>
+                        <div class="preview-info">
+                            <h3>1. Questionnaire Ciblé</h3>
+                            <p>Déterminez vos motivations et affinez vos préférences (éducation, environnement, santé...).</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="preview-card">
+                        <div class="preview-img-wrapper">
+                            <img src="assets/screenshot-2.png" alt="Capture d'écran de la recommandation idéale" class="preview-img">
+                        </div>
+                        <div class="preview-info">
+                            <h3>2. Analyse de Compatibilité</h3>
+                            <p>Accédez à un score de compatibilité personnalisé avec le détail de vos points forts sur place.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="preview-card">
+                        <div class="preview-img-wrapper">
+                            <img src="assets/screenshot-3.png" alt="Capture d'écran de l'historique de recherche" class="preview-img">
+                        </div>
+                        <div class="preview-info">
+                            <h3>3. Historique & Suivi</h3>
+                            <p>Conservez l'historique complet de vos simulations et gardez vos favoris à portée de main.</p>
                         </div>
                     </div>
                 </div>
